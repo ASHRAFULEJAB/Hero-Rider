@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
+import Dashboard from '../dashboard/Dashboard'
 // import AddAProduct from '../dashboard/AddAProduct/AddAProduct'
 // import AllBuyers from '../dashboard/AllBuyers/AllBuyers'
 // import AllSellers from '../dashboard/AllSellers/AllSellers'
@@ -9,7 +10,12 @@ import { createBrowserRouter } from 'react-router-dom'
 // import ReportedItems from '../dashboard/ReportedItems/ReportedItems'
 // import WelcomeScreen from '../dashboard/WelcomeScreen'
 import Main from '../layouts/Main'
+import Cars from '../pages/cars/Cars'
+import Help from '../pages/help/Help'
 import Home from '../pages/Home/Home'
+import Safety from '../pages/safety/Safety'
+import SignIn from '../pages/SignIn/SignIn'
+import SignUp from '../pages/SignUp/SignUp'
 // import About from '../pages/About/About'
 // import Blogs from '../pages/Blogs/Blogs'
 // import Categories from '../pages/Categories/Categories'
@@ -31,6 +37,10 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
       },
+      {
+        path: '/cars',
+        element:<Cars></Cars>,
+      },
       // {
       //   path: '/categories/:id',
       //   element: (
@@ -43,32 +53,28 @@ const router = createBrowserRouter([
       //       `https://mall-of-recondition-laptops-server.vercel.app/categories/${params.id}`
       //     ),
       // },
-      // {
-      //   path: '/blogs',
-      //   element: <Blogs></Blogs>,
-      // },
-      // {
-      //   path: '/about',
-      //   element: <About></About>,
-      // },
-      // {
-      //   path: '/signup',
-      //   element: <SignUp></SignUp>,
-      // },
-      // {
-      //   path: '/signin',
-      //   element: <SignIn></SignIn>,
-      // },
+      {
+        path: '/help',
+        element:<Help/>,
+      },
+      {
+        path: '/safety',
+        element:<Safety/>,
+      },
+      {
+        path: '/login',
+        element:<SignIn/>,
+      },
+      {
+        path: '/register',
+        element:<SignUp/>,
+      },
     ],
   },
-  // {
-  //   path: '/dashboard',
-  //   element: (
-  //     <PrivateRoute>
-  //       <DashboardLayout></DashboardLayout>
-  //     </PrivateRoute>
-  //   ),
-  //   children: [
+  {
+    path: '/dashboard',
+    element: <Dashboard></Dashboard>,
+    children: []
   //     {
   //       path: '/dashboard',
   //       element: (
@@ -134,6 +140,6 @@ const router = createBrowserRouter([
   //         ),
   //     },
   //   ],
-  // },
+  },
 ])
 export default router

@@ -35,38 +35,38 @@ const Header = () => {
             <ul class="flex items-center hidden space-x-8 lg:flex">
               <li>
                 <Link
-                  to="/"
+                  to="/cars"
                   aria-label="Our product"
                   class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                 >
-                  Product
+                  Your Cars
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/help"
                   aria-label="Our product"
                   class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                 >
-                  Features
+                  Help
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/safety"
                   aria-label="Product pricing"
                   class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                 >
-                  Pricing
+                 Safety
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/dashboard"
                   aria-label="About us"
                   class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                 >
-                  About us
+                  Dashboard
                 </Link>
               </li>
             </ul>
@@ -74,7 +74,7 @@ const Header = () => {
           <ul class="flex items-center hidden space-x-8 lg:flex">
             <li>
               <Link
-                to="/"
+                to="/login"
                 aria-label="Sign in"
                 class="font-medium tracking-wide
                  text-gray-100 transition-colors duration-200 hover:text-teal-400"
@@ -84,7 +84,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to="/"
+                to="/register"
                 class="inline-flex items-center 
                 justify-center h-12 px-6 font-medium tracking-wide
                  text-black transition duration-200 rounded shadow-md bg-gray-200
@@ -165,44 +165,44 @@ const Header = () => {
                     <ul class="space-y-4">
                       <li>
                         <Link
-                          to="/"
+                          to="/cars"
                           aria-label="Our product"
                           class="font-medium tracking-wide
                            text-gray-100 transition-colors duration-200 hover:text-purple-400"
                         >
-                          Product
+                          Your Cars
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/"
+                          to="/help"
                           aria-label="Our product"
                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-purple-400"
                         >
-                          Features
+                          Help
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/"
+                          to="/safety"
                           aria-label="Product pricing"
                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-purple-400"
                         >
-                          Pricing
+                          Safety
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/"
+                          to="/dashboard"
                           aria-label="About us"
                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-purple-400"
                         >
-                          About us
+                          Dashboard
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/"
+                          to="/login"
                           aria-label="Sign in"
                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-purple-400"
                         >
@@ -211,7 +211,7 @@ const Header = () => {
                       </li>
                       <li>
                         <Link
-                          to="/"
+                          to="/register"
                           class="inline-flex items-center 
                           justify-center w-full h-12 px-6
                            font-medium tracking-wide text-gray-900

@@ -13,15 +13,15 @@ import app from '../../firebase/firebaseConfig'
 const auth = getAuth(app)
 
 export const UserAuthContext = createContext()
-const HeroProvider = ({ children }) => {
-  const [heroUser, setHeroUser] = useState(null)
+const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null)
   const [loader, setLoader] = useState(true)
 
   const SignUp = (email, password) => {
     setLoader(true)
     return createUserWithEmailAndPassword(auth, email, password)
   }
-  const heroUserLogin = (email, password) => {
+  const userLogin = (email, password) => {
     setLoader(true)
     return signInWithEmailAndPassword(auth, email, password)
   }
@@ -29,11 +29,11 @@ const HeroProvider = ({ children }) => {
     setLoader(true)
     return signInWithPopup(auth, provider)
   }
-  const updateHeroUserProfile = (profile) => {
+  const updateUserProfile = (profile) => {
     setLoader(true)
     return updateProfile(auth.currentUser, profile)
   }
-  const heroUserLogout = () => {
+  const userLogout = () => {
     setLoader(false)
     localStorage.removeItem('token')
     return signOut(auth)
@@ -41,7 +41,7 @@ const HeroProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setHeroUser(currentUser)
+      setUser(currentUser)
 
       setLoader(false)
     })
@@ -50,22 +50,22 @@ const HeroProvider = ({ children }) => {
     }
   }, [])
 
-  const HeroInfo = {
+  const AuthInfo = {
     loader,
-    heroUser,
+    user,
     setLoader,
     SignUp,
-    heroUserLogin,
-    heroUserLogout,
+    userLogin,
+    userLogout,
     userGoogleLogin,
-    updateHeroUserProfile,
+    updateUserProfile,
   }
 
   return (
-    <UserAuthContext.Provider value={HeroInfo}>
+    <UserAuthContext.Provider value={AuthInfo}>
       {children}
     </UserAuthContext.Provider>
-  );
+  )
 }
 
-export default HeroProvider
+export default AuthProvider
