@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import DashboardHeader from "./dashboardHeader";
+import Sidebar from "./DashboardLayout";
 
 const Dashboard = () => {
-    return (
-        <div>
-            <h1>dadhboard</h1>
-        </div>
-    );
+  return (
+    <>
+      <DashboardHeader />
+      <div className="flex">
+        <Sidebar />
+        <Outlet />
+      </div>
+    </>
+  );
 };
 
 export default Dashboard;

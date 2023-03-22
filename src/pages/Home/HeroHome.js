@@ -1,4 +1,5 @@
 import React from "react";
+import Hero from '../../assets/images/hero.png'
 
 const HeroHome = () => {
   return (
@@ -64,7 +65,7 @@ const HeroHome = () => {
             <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
               <img
                 class="w-full h-full lg:max-w-3xl"
-                src="https://merakiui.com/images/components/Catalogue-pana.svg"
+                src={Hero}
                 alt="Catalogue-pana.svg"
               />
             </div>
