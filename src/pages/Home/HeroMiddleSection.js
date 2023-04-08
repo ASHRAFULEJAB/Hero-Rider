@@ -9,8 +9,8 @@ const HeroMiddleSection = () => {
           class="text-2xl font-semibold text-center text-gray-100 capitalize 
         lg:text-3xl dark:text-black"
         >
-          How
-          <br /> It<span class="text-blue-500 ml-2">Works</span>
+          Upcoming
+          <br /> Library<span class="text-blue-500 ml-2">Events</span>
         </h1>
 
         <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
@@ -33,12 +33,18 @@ const HeroMiddleSection = () => {
             </span>
 
             <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">
-              Find The Perfect Car
+              Sunday,April:12 2023-3:00PM
             </h1>
 
             <p class="text-gray-500 dark:text-gray-300">
-              Gide Sincerly to your destinationas clear motion transform to your
-              car into a super fast car.
+              <span className="font-bold text-2xl">
+                {" "}
+                New Little Engine written by Christopher Awdry
+              </span>{" "}
+              <br />
+              New Little Engine - is an addition story to the railway series in
+              which we meet the narrow gauge engine Ivo Hugh, the new recruit to
+              the Thin Controller's Little Railway.
             </p>
 
             <Link
@@ -80,12 +86,19 @@ const HeroMiddleSection = () => {
             </span>
 
             <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">
-              Book Your Trip Car
+              Tuesday,April:14 2023-3:00PM
             </h1>
 
             <p class="text-gray-500 dark:text-gray-300">
-              Gide Sincerly to your destinationas clear motion transform to your
-              car into a super fast car.
+              <span className="font-bold text-2xl">
+                {" "}
+                A Woman’s Story, by Annie Ernaux
+              </span>{" "}
+              <br />A trilogy of books intersect at her youth: the story of
+              Ernaux's father, told in La Place; her semi-autobiographical first
+              novel, Cleaned Out; and A Woman's Story . In this work, the woman
+              of the title is the author's mother and the story is a brief,
+              aching requiem for an intense but qualified relationship
             </p>
 
             <Link
@@ -127,12 +140,18 @@ const HeroMiddleSection = () => {
             </span>
 
             <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">
-              Hit On The Road!
+              Tuesday,May:14 2023-3:00PM
             </h1>
 
             <p class="text-gray-500 dark:text-gray-300">
-              Gide Sincerly to your destinationas clear motion transform to your
-              car into a super fast car.
+              <span className="font-bold text-2xl">
+                {" "}
+                Ascendant, by Jack Campbell.
+              </span>{" "}
+              <br />A young fleet officer and a Marine stand together to defend
+              their colony in the continuation of the powerful and action-packed
+              Genesis Fleet saga from New York Times bestselling author Jack
+              Campbell… Join the reading book club.
             </p>
 
             <Link
