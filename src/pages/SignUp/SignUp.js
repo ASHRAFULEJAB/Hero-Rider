@@ -1,13 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { UserAuthContext } from "../../contexts/AuthContext/AuthProvider";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-// import { setAuthToken } from '../../hooks/useToken'
-
 import Lottie from "lottie-react";
 import signup from "../../assets/signup.json";
-import { UserAuthContext } from "../../contexts/AuthContext/AuthProvider";
 
 const SignUp = () => {
   const {
@@ -41,21 +38,18 @@ const SignUp = () => {
               role: data.role,
               image: data.photoURL,
             };
-            fetch(
-              "https://mall-of-recondition-laptops-server.vercel.app/users",
-              {
-                method: "post",
-                headers: {
-                  "content-type": "application/json",
-                },
-                body: JSON.stringify(user),
-              }
-            )
+            fetch("https://todo-list-server-ashrafulejab.vercel.app/users", {
+              method: "post",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(user),
+            })
               .then((res) => res.json())
               .then((data) => {
                 toast.success("Registration Done");
                 console.log(data);
-                // setAuthToken(data)
+
                 setLoader(false);
               });
           })
@@ -70,285 +64,17 @@ const SignUp = () => {
   };
 
   return (
-    <div className="lg:ml-10 sm:mx-3 ">
-      <section class="bg-gray-900 dark:bg-gray-100">
-        <div class="flex justify-center min-h-screen">
-          <div class="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
-            <div class="w-full">
-              <h1
-                class="text-2xl font-semibold tracking-wider text-gray-800 capitalize
-               dark:text-gray-900"
-              >
-                Get your free account now.
-              </h1>
-
-              <p class="mt-4 text-gray-500 dark:text-gray-900">
-                Let’s get you all set up so you can verify your personal account
-                and begin setting up your profile.
-              </p>
-
-              <div class="mt-6">
-                <h1 class="text-gray-500 dark:text-gray-900">
-                  Select type of account
-                </h1>
-
-                <div class="mt-3 md:flex md:items-center md:-mx-2">
-                  <button
-                    class="flex justify-center w-full px-6 py-3 text-white 
-                  bg-black rounded-lg md:w-auto md:mx-2 focus:outline-none"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-
-                    <span class="mx-2">Rider</span>
-                  </button>
-
-                  <button
-                    class="flex justify-center w-full px-6 py-3 mt-4
-                   text-blue-400 border border-blue-400 rounded-lg md:mt-0 
-                   md:w-auto md:mx-2 dark:border-gray-900  dark:text-gray-800 focus:outline-none"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
-
-                    <span class="mx-2">Driving Learner</span>
-                  </button>
-                </div>
-              </div>
-
-              <form class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="John"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700
-                     placeholder-gray-400 bg-white border border-gray-200
-                      rounded-lg dark:placeholder-gray-600 dark:bg-gray-100
-                       dark:text-gray-900 dark:border-gray-700 focus:border-blue-400
-                        dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none
-                         focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Address
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your Address"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Phone number
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="XXX-XX-XXXX-XXX"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Email address
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="johnsnow@example.com"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Age
-                  </label>
-                  <input
-                    type="number"
-                    placeholder="Enter your age"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Area
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your Area"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Driving licence picture
-                  </label>
-                  <input
-                    type="file"
-                    placeholder="Enter driving licence picture"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Nid picture
-                  </label>
-                  <input
-                    type="file"
-                    placeholder="Enter nid picture"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Profile picture
-                  </label>
-                  <input
-                    type="file"
-                    placeholder="Enter profile picture"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Car Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your Car Name"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Car Model
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter Car Model"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Car Palate
-                  </label>
-                  <input
-                    type="number"
-                    placeholder="Enter Car Palate"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Vehicle Type
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your Area"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Role
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your Area"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="Enter your password"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-
-                <div>
-                  <label class="block mb-2 text-sm text-gray-600 dark:text-gray-900">
-                    Confirm password
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="Enter your password"
-                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-100 dark:text-gray-900 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-
-                <button
-                  class="flex items-center justify-between 
-                w-full px-6 py-3 text-sm tracking-wide 
-                text-white capitalize transition-colors duration-300 transform
-                 bg-gray-800 rounded-lg hover:bg-gray-900 
-                 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-                >
-                  <span>Sign Up </span>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-5 h-5 rtl:-scale-x-100"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <div className="w-full max-w-sm p-6 m-auto mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
+    <div className="my-3 sm:mx-3 lg:flex">
+      <div className="w-full max-w-sm p-6 m-auto mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
         <h1 className="text-3xl font-semibold text-center text-gray-700  dark:text-white">
-          Register
+          Sign Up
         </h1>
 
         <form onSubmit={handleSubmit(handleUserSignUp)} className="mt-6">
           <div>
             <label
               htmlFor="username"
-              className="block text-sm text-gray-800 dark:text-gray-900"
+              className="block text-sm text-gray-800 dark:text-gray-200"
             >
               Name
             </label>
@@ -357,7 +83,7 @@ const SignUp = () => {
               {...register("name", {
                 required: "Name is required",
               })}
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-900 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           {errors.name && (
@@ -366,7 +92,7 @@ const SignUp = () => {
           <div>
             <label
               htmlFor="username"
-              className="block text-sm text-gray-800 dark:text-gray-900"
+              className="block text-sm text-gray-800 dark:text-gray-200"
             >
               Photo
             </label>
@@ -375,7 +101,7 @@ const SignUp = () => {
               {...register("image", {
                 required: "image is required",
               })}
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-900 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           {errors.image && (
@@ -384,7 +110,7 @@ const SignUp = () => {
           <div>
             <label
               htmlFor="username"
-              className="block text-sm text-gray-800 dark:text-gray-900"
+              className="block text-sm text-gray-800 dark:text-gray-200"
             >
               Email
             </label>
@@ -393,7 +119,7 @@ const SignUp = () => {
               {...register("email", {
                 required: "email is required",
               })}
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-900 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           {errors.email && (
@@ -403,7 +129,7 @@ const SignUp = () => {
             <div className="flex items-center justify-between">
               <label
                 htmlFor="password"
-                className="block text-sm text-gray-800 dark:text-gray-900"
+                className="block text-sm text-gray-800 dark:text-gray-200"
               >
                 Password
               </label>
@@ -424,7 +150,7 @@ const SignUp = () => {
                     "Password must be oneUpper&SmallLetter,one number and one special characters ",
                 },
               })}
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-900 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           {errors.password && (
@@ -432,22 +158,7 @@ const SignUp = () => {
           )}
           {signupError && <p className="text-red-600">{signupError}</p>}
 
-          {/* <select
-            {...register("role")}
-            className="select select-bordered w-full max-w-xs mt-2"
-          > */}
-      {/* <option >
-              Buyers
-            </option> */}
-
-      {/* {role.map((r, i) => (
-              <option key={r.i} value={r}>
-                {r}
-              </option>
-            ))} */}
-      {/* </select> */}
-
-      {/* <div className="mt-6">
+          <div className="mt-6">
             <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
               Register
             </button>
@@ -477,7 +188,7 @@ const SignUp = () => {
             </svg>
 
             <span className="hidden mx-2 sm:inline text-gray-900">
-              Register with Google
+              Sign Up with Google
             </span>
           </button>
 
@@ -496,16 +207,15 @@ const SignUp = () => {
           Already have an account?{" "}
           <Link
             to="/login"
-            className="font-medium text-gray-700 dark:text-gray-900 hover:underline"
+            className="font-medium text-gray-700 dark:text-gray-200 hover:underline"
           >
             Login
           </Link>
-        </p> */}
-      {/* </div>  */}
-
-      {/* <div className="flex items-center  justify-center h-26 w-90% ">
+        </p>
+      </div>
+      <div className="flex items-center  justify-center h-26 w-90% ">
         <Lottie animationData={signup} loop={true}></Lottie>
-      </div> */}
+      </div>
     </div>
   );
 };

@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { UserAuthContext } from "../../contexts/AuthContext/AuthProvider";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, userLogout } = useContext(UserAuthContext);
+  const handleLogout = () => {
+    userLogout()
+      .then(() => {})
+      .catch((e) => console.log(e));
+  };
   return (
     <div class="bg-black">
       <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -29,71 +36,91 @@ const Header = () => {
                 <rect x="14" y="11" width="7" height="12" />
               </svg> */}
               <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                Hero Rider
+                Weero Library
               </span>
             </Link>
             <ul class="flex items-center hidden space-x-8 lg:flex">
               <li>
                 <Link
-                  to="/cars"
+                  to="/product"
                   aria-label="Our product"
                   class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                 >
-                  Your Cars
+                  Product
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/help"
+                  to="/booking"
                   aria-label="Our product"
                   class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                 >
-                  Help
+                  Booking
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/safety"
+                  to="/contact"
                   aria-label="Product pricing"
                   class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                 >
-                 Safety
+                  Contact
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/dashboard"
+                  to="/about"
                   aria-label="About us"
                   class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                 >
-                  Dashboard
+                  About
                 </Link>
               </li>
             </ul>
           </div>
           <ul class="flex items-center hidden space-x-8 lg:flex">
-            <li>
-              <Link
-                to="/login"
-                aria-label="Sign in"
-                class="font-medium tracking-wide
-                 text-gray-100 transition-colors duration-200 hover:text-teal-400"
-              >
-                Sign in
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/register"
-                class="inline-flex items-center 
+            {user?.uid ? (
+              <>
+                <li onClick={handleLogout}>
+                  <Link
+                    to="/login"
+                    className="inline-flex items-center 
                 justify-center h-12 px-6 font-medium tracking-wide
                  text-black transition duration-200 rounded shadow-md bg-gray-200
                   hover:bg-white-100 focus:shadow-outline focus:outline-none"
-                aria-label="Sign up"
-              >
-                Sign up
-              </Link>
-            </li>
+                    aria-label="Sign up"
+                    title="Sign up"
+                  >
+                    Logout
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link
+                    to="/login"
+                    aria-label="Sign in"
+                    class="font-medium tracking-wide
+                 text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                  >
+                    Sign in
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/register"
+                    class="inline-flex items-center 
+                justify-center h-12 px-6 font-medium tracking-wide
+                 text-black transition duration-200 rounded shadow-md bg-gray-200
+                  hover:bg-white-100 focus:shadow-outline focus:outline-none"
+                    aria-label="Sign up"
+                  >
+                    Sign up
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
           <div class="lg:hidden">
             <button
@@ -142,7 +169,7 @@ const Header = () => {
                           <rect x="14" y="11" width="7" height="12" />
                         </svg> */}
                         <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                          Hero Rider
+                          Weero Library
                         </span>
                       </Link>
                     </div>
@@ -165,64 +192,86 @@ const Header = () => {
                     <ul class="space-y-4">
                       <li>
                         <Link
-                          to="/cars"
+                          to="/product"
                           aria-label="Our product"
                           class="font-medium tracking-wide
                            text-gray-100 transition-colors duration-200 hover:text-purple-400"
                         >
-                          Your Cars
+                          Product
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/help"
+                          to="/booking"
                           aria-label="Our product"
                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-purple-400"
                         >
-                          Help
+                          Booking
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/safety"
+                          to="/contact"
                           aria-label="Product pricing"
                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-purple-400"
                         >
-                          Safety
+                          Contact
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/dashboard"
+                          to="/about"
                           aria-label="About us"
                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-purple-400"
                         >
-                          Dashboard
+                          About
                         </Link>
                       </li>
-                      <li>
-                        <Link
-                          to="/login"
-                          aria-label="Sign in"
-                          class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-purple-400"
-                        >
-                          Sign in
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/register"
-                          class="inline-flex items-center 
+                      {user?.uid ? (
+                        <>
+                          <li onClick={handleLogout}>
+                            <Link
+                              to="/signin"
+                              className="inline-flex items-center 
                           justify-center w-full h-12 px-6
                            font-medium tracking-wide text-gray-900
                             transition duration-200 rounded shadow-md
                              bg-gray-200 hover:bg-gray-100
                               focus:shadow-outline focus:outline-none"
-                          aria-label="Sign up"
-                        >
-                          Sign up
-                        </Link>
-                      </li>
+                              aria-label="Sign up"
+                              title="Sign up"
+                            >
+                              Logout
+                            </Link>
+                          </li>
+                        </>
+                      ) : (
+                        <>
+                          <li>
+                            <Link
+                              to="/login"
+                              aria-label="Sign in"
+                              class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-purple-400"
+                            >
+                              Sign in
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/register"
+                              class="inline-flex items-center 
+                          justify-center w-full h-12 px-6
+                           font-medium tracking-wide text-gray-900
+                            transition duration-200 rounded shadow-md
+                             bg-gray-200 hover:bg-gray-100
+                              focus:shadow-outline focus:outline-none"
+                              aria-label="Sign up"
+                            >
+                              Sign up
+                            </Link>
+                          </li>
+                        </>
+                      )}
                     </ul>
                   </nav>
                 </div>

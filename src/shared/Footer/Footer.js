@@ -27,12 +27,12 @@ const Footer = () => {
               <rect x="14" y="11" width="7" height="12" />
             </svg> */}
             <span className=" text-xl font-bold tracking-wide text-gray-800 uppercase">
-              Hero Rider
+              Weero Library
             </span>
           </a>
           <div className="mt-1 lg:max-w-sm">
             <p className="text-sm text-gray-800">
-              New Ride Experience Ever
+              123 Madison Avenue New York, NY 10010 (800) 123-4567
             </p>
             <div className="flex items-center mt-6 space-x-4 sm:mt-0">
               <a
@@ -62,105 +62,15 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-sm text-gray-600 mt-3">
-              © Copyright 2023 herorider Inc. All rights reserved.
+              © Copyright 2023 Weero Library Itd. All rights reserved.
             </p>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
           <div></div>
           <div>
-            <p className="font-semibold tracking-wide text-gray-800">Product</p>
-            <ul className="mt-2 space-y-2">
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                >
-                  Web
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                >
-                  eCommerce
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                >
-                  Business
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                >
-                  Entertainment
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                >
-                  Portfolio
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-semibold tracking-wide text-gray-800">Company</p>
-            <ul className="mt-2 space-y-2">
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                >
-                  Media
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                >
-                  Brochure
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                >
-                  Nonprofit
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                >
-                  Educational
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                >
-                  Projects
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
             <p className="font-semibold tracking-wide text-gray-800">
-              Resources
+              Library Policies
             </p>
             <ul className="mt-2 space-y-2">
               <li>
@@ -168,7 +78,7 @@ const Footer = () => {
                   href="/"
                   className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                 >
-                  Infopreneur
+                  Open Data & Feeds
                 </a>
               </li>
               <li>
@@ -176,7 +86,7 @@ const Footer = () => {
                   href="/"
                   className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                 >
-                  Personal
+                  Print Publications
                 </a>
               </li>
               <li>
@@ -184,7 +94,7 @@ const Footer = () => {
                   href="/"
                   className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                 >
-                  Wiki
+                  Local History Publications
                 </a>
               </li>
               <li>
@@ -192,7 +102,101 @@ const Footer = () => {
                   href="/"
                   className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                 >
-                  Forum
+                  Strategic Plans, Annual Reports
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                >
+                  Library Board
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold tracking-wide text-gray-800">
+              Accessibility
+            </p>
+            <ul className="mt-2 space-y-2">
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                >
+                  Accessibility at Library Branches
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                >
+                  Services for People with Disabilities
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                >
+                  Collections for People with Disabilities
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                >
+                  Website Accessibility
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                >
+                  TTY Service
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold tracking-wide text-gray-800">
+              Support Your Library
+            </p>
+            <ul className="mt-2 space-y-2">
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                >
+                  Our Benefits
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                >
+                  Our Features
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                >
+                  Our Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                >
+                  Locations
                 </a>
               </li>
             </ul>
