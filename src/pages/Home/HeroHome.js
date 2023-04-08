@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from '../../assets/images/hero.png'
+import Hero from '../../assets/images/heroo.jpg'
 
 const HeroHome = () => {
   return (
@@ -10,13 +10,13 @@ const HeroHome = () => {
             <div class="w-full lg:w-1/2">
               <div class="lg:max-w-lg">
                 <h1 class="text-3xl font-semibold text-gray-100 dark:text-gray-900 lg:text-4xl">
-                  It's time to change <br /> the{" "}
-                  <span class="text-blue-500 ">ride experience</span>
+                  The Wonderful <br /> World{" "}
+                  <span class="text-blue-500 ">of Reading</span>
                 </h1>
 
-                <p class="mt-3 text-gray-600 dark:text-gray-400">
-                  Greater comfort.Stronger performance.Improved Safety.No
-                  Compromise
+                <p class="mt-3 text-gray-600 dark:text-gray-700">
+                  The library is a place for everyone to explore, discover, and
+                  engage
                 </p>
 
                 <section
@@ -27,7 +27,7 @@ const HeroHome = () => {
                     <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-1">
                       <div>
                         <input
-                          placeholder="Enter Pickup Location"
+                          placeholder="Enter Book Title"
                           id="username"
                           type="text"
                           class="block w-full px-4 py-2 mt-2
@@ -41,7 +41,7 @@ const HeroHome = () => {
 
                       <div>
                         <input
-                          placeholder="Enter Destination"
+                          placeholder="Enter Description"
                           id="emailAddress"
                           type="email"
                           class="block w-full px-4 py-2 mt-2 text-gray-100 bg-gray-900 border
@@ -53,8 +53,10 @@ const HeroHome = () => {
                     </div>
 
                     <div class="flex justify-end mt-6">
-                      <button class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
-                        Register now
+                      <button class="px-8 py-2.5 leading-5 text-white transition-colors 
+                      duration-300 transform bg-gray-800 rounded-md
+                       hover:bg-gray-900 focus:outline-none focus:bg-gray-600">
+                        View Collections
                       </button>
                     </div>
                   </form>
