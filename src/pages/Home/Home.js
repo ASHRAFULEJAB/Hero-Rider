@@ -2,13 +2,15 @@ import React from 'react';
 import HeroHome from './HeroHome';
 import HeroMiddleSection from './HeroMiddleSection';
 import HomeCard from './HomeCard';
+import Carosoul from './Carosoul';
 
 const Home = () => {
     return (
         <div>
           <HeroHome/>
           <HeroMiddleSection/>
-          <HomeCard/>
+          <Carosoul/>
+          {/* <HomeCard/> */}
         </div>
     );
 };
