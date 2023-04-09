@@ -9,6 +9,7 @@ import Booking from "../pages/booking/Booking";
 import Contact from "../pages/contact/Contact";
 import About from "../pages/about/About";
 import PrivateRoute from "./PrivateRoute";
+import HomeCard from "../pages/Home/HomeCard";
 
 const router = createBrowserRouter([
   {
@@ -20,9 +21,16 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+      // {
+      //   path: "/category",
+      //   element: <HomeCard></HomeCard>,
+      //  loader: () => fetch(`db/category.json`),
+      // },
       {
-        path: "/product",
+        path: "/category/:id",
         element: <Product />,
+        loader: ({ params }) =>
+          fetch(`https://weerolibrary-server.vercel.app/category/${params.id}`),
       },
       // {
       //   path: '/categories/:id',

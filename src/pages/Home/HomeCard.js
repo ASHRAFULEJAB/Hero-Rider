@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const HomeCard = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch("https://weerolibrary-server.vercel.app/categories")
+      .then((res) => res.json())
+      .then((data) => setCategories(data));
+  }, []);
+
   return (
     <section class="bg-gray-900 dark:bg-gray-100">
       <div class="container px-6 py-10 mx-auto">
@@ -9,24 +17,30 @@ const HomeCard = () => {
           class="text-2xl font-semibold text-center
          text-gray-100 capitalize lg:text-3xl dark:text-gray-900"
         >
-          Our <span class="text-blue-500">Popular Destination</span>
+          Our <span class="text-blue-500">Popular Books Category</span>
         </h1>
 
         <p class="max-w-2xl mx-auto my-6 text-center text-gray-100 dark:text-gray-900">
-          Find the best Riding experience all over the world!
+          Find the best Book and reading experience all over the world!
         </p>
         <div class="flex items-center justify-center">
           <div
             class="flex items-center p-1 border border-blue-600 dark:border-gray-900 
           rounded-xl"
           >
-            <button
-              class="px-4 py-2 text-sm font-medium text-white capitalize
-             bg-black md:py-3 rounded-xl md:px-12"
-            >
-              USA
-            </button>
-            <button
+            {categories.map((category) => (
+              <button
+                class="px-4 py-2 mx-4 text-sm font-medium
+             text-blue-600 capitalize transition-colors duration-300 md:py-3
+              dark:text-black dark:hover:text-white focus:outline-none
+               hover:bg-black hover:text-white rounded-xl md:mx-8 md:px-12"
+                key={category.id}
+              >
+                <Link to={`/category/${category.id}`}>{category.name}</Link>
+              </button>
+            ))}
+
+            {/* <button
               class="px-4 py-2 mx-4 text-sm font-medium
              text-blue-600 capitalize transition-colors duration-300 md:py-3
               dark:text-black dark:hover:text-white focus:outline-none
@@ -41,10 +55,11 @@ const HomeCard = () => {
               focus:outline-none hover:bg-black hover:text-white rounded-xl md:px-12"
             >
               Canada
-            </button>
+            </button> */}
           </div>
         </div>
-        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-2">
+        {/* <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-2">
+          {}
           <div
             class="px-10 py-8 transition-colors duration-300 transform border
            cursor-pointer rounded-xl hover:border-transparent group
@@ -90,7 +105,7 @@ const HomeCard = () => {
               </div>
             </div>
           </div>
-          <div
+          {/* <div
             class="px-10 py-8 transition-colors duration-300 transform border
            cursor-pointer rounded-xl hover:border-transparent group
             hover:bg-black dark:border-gray-700 dark:hover:border-transparent"
@@ -224,10 +239,8 @@ const HomeCard = () => {
                 </Link>
               </div>
             </div>
-          </div>
-
-         
-        </div>
+          </div> */}
+        {/* </div> * */}
       </div>
     </section>
   );

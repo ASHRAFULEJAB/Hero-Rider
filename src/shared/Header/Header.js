@@ -40,15 +40,15 @@ const Header = () => {
               </span>
             </Link>
             <ul class="flex items-center hidden space-x-8 lg:flex">
-              <li>
+              {/* <li>
                 <Link
-                  to="/product"
+                  to="/category/:id"
                   aria-label="Our product"
                   class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                 >
                   Product
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/booking"
@@ -192,7 +192,7 @@ const Header = () => {
                     <ul class="space-y-4">
                       <li>
                         <Link
-                          to="/product"
+                          to="/category"
                           aria-label="Our product"
                           class="font-medium tracking-wide
                            text-gray-100 transition-colors duration-200 hover:text-purple-400"
